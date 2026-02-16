@@ -48,7 +48,7 @@ export function Admin() {
   useEffect(() => {
     const fetchAdmins = async () => {
       try {
-        const res = await fetch("http://127.0.0.1:8000/api/auth/admins/")
+        const res = await fetch("http://127.0.0.1:8011/api/auth/admins/")
 
         if (!res.ok) throw new Error("Failed API")
 
@@ -89,7 +89,7 @@ export function Admin() {
   // ✅ Toggle Active Status
   const toggleStatus = async (admin: AdminType, checked: boolean) => {
     try {
-      await fetch(`http://127.0.0.1:8000/api/auth/admins/${admin.id}/`, {
+      await fetch(`http://127.0.0.1:8011/api/auth/admins/${admin.id}/`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ is_active: checked }),
