@@ -145,7 +145,7 @@ export function Trainers() {
   useEffect(() => {
   const fetchTrainers = async () => {
     try {
-      const res = await fetch("http://127.0.0.1:8000/api/auth/trainers/")
+      const res = await fetch("http://127.0.0.1:8011/api/auth/trainers/")
       const data = await res.json()
 
       const formatted = data.map((t: any) => ({
@@ -239,7 +239,7 @@ const [loading, setLoading] = useState(true)
     const [firstName = "", lastName = ""] = editingTrainer.name.split(" ")
 
     try {
-      await fetch(`http://127.0.0.1:8000/api/auth/trainers/${editingTrainer.id}/`, {
+      await fetch(`http://127.0.0.1:8011/api/auth/trainers/${editingTrainer.id}/`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -276,7 +276,7 @@ const [loading, setLoading] = useState(true)
     if (!deleteTrainer) return
 
     try {
-      await fetch(`http://127.0.0.1:8000/api/auth/trainers/${deleteTrainer.id}/`, {
+      await fetch(`http://127.0.0.1:8011/api/auth/trainers/${deleteTrainer.id}/`, {
         method: "DELETE",
       })
 
@@ -433,7 +433,7 @@ const [loading, setLoading] = useState(true)
                             checked={trainer.active}
                             onCheckedChange={async (checked) => {
                               try {
-                                await fetch(`http://127.0.0.1:8000/api/auth/trainers/${trainer.id}/`, {
+                                await fetch(`http://127.0.0.1:8011/api/auth/trainers/${trainer.id}/`, {
                                   method: "PATCH",
                                   headers: {
                                     "Content-Type": "application/json",
