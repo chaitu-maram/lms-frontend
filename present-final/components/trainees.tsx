@@ -378,7 +378,7 @@
 
 //   const fetchTrainees = async () => {
 //   try {
-//     const res = await fetch("http://127.0.0.1:8000/api/auth/list_of_trainees/")
+//     const res = await fetch("http://127.0.0.1:/api/auth/list_of_trainees/")
 //     const data = await res.json()
 
 //     // 🔥 Convert Django data → OLD UI FORMAT (no layout change)
@@ -412,7 +412,7 @@
 //     formData.append("contact_number", newTrainee.phone)
 
 //     try {
-//       await fetch("http://127.0.0.1:8000/api/auth/register/trainee/", {
+//       await fetch("http://127.0.0.1:/api/auth/register/trainee/", {
 //         method: "POST",
 //         body: formData,
 //       })
@@ -430,7 +430,7 @@
 //   const handleConfirmDelete = async () => {
 //     if (!deleteTrainee) return
 
-//     await fetch(`http://127.0.0.1:8000/api/auth/trainees/${deleteTrainee.id}/delete/`, {
+//     await fetch(`http://127.0.0.1:8011/api/auth/trainees/${deleteTrainee.id}/delete/`, {
 
 //       method: "DELETE",
 //     })
