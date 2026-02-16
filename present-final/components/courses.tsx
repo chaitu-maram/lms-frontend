@@ -583,7 +583,7 @@ type Course = {
 }
 
 export function Courses() {
-  const API = "http://127.0.0.1:8000/api/auth/courses/"
+  const API = "http://127.0.0.1:8011/api/auth/courses/"
 
 
   const [courses, setCourses] = useState<Course[]>([])
