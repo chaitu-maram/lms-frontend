@@ -658,7 +658,7 @@ export function Trainees() {
 
   const fetchTrainees = async () => {
     try {
-      const res = await fetch("http://127.0.0.1:8000/api/auth/list_of_trainees/")
+      const res = await fetch("http://127.0.0.1:8011/api/auth/list_of_trainees/")
       const data = await res.json()
 
       const mappedData: Trainee[] = data.map((t: any) => ({
@@ -691,7 +691,7 @@ export function Trainees() {
     formData.append("contact_number", newTrainee.phone)
 
     try {
-      await fetch("http://127.0.0.1:8000/api/auth/register/trainee/", {
+      await fetch("http://127.0.0.1:8011/api/auth/register/trainee/", {
         method: "POST",
         body: formData,
       })
@@ -709,7 +709,7 @@ export function Trainees() {
   const handleConfirmDelete = async () => {
     if (!deleteTrainee) return
 
-    await fetch(`http://127.0.0.1:8000/api/auth/trainees/${deleteTrainee.id}/delete/`, {
+    await fetch(`http://127.0.0.1:8011/api/auth/trainees/${deleteTrainee.id}/delete/`, {
       method: "DELETE",
     })
 
@@ -731,7 +731,7 @@ export function Trainees() {
 //   formData.append("contact_number", editingTrainee.phone)
 
 //   try {
-//     await fetch(`http://127.0.0.1:8000/api/auth/trainees/${editingTrainee.id}/`, {
+//     await fetch(`http://127.0.0.1:8011/api/auth/trainees/${editingTrainee.id}/`, {
 //       method: "PUT",
 //       body: formData,
 //     })
@@ -760,7 +760,7 @@ const handleUpdateTrainee = async () => {
   formData.append("contact_number", editingTrainee.phone)
 
   try {
-    await fetch(`http://127.0.0.1:8000/api/auth/trainees/${editingTrainee.id}/`, {
+    await fetch(`http://127.0.0.1:8011/api/auth/trainees/${editingTrainee.id}/`, {
       method: "PATCH",   // ✅ MUST be PATCH
       body: formData,
     })
